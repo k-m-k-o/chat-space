@@ -14,7 +14,7 @@ Database design
 ### Association
 - has_many :messages
 - has_many :groups,through: :members
-- belongs_to :member
+- has_many :members
 
 ## groupsテーブル
 
@@ -32,7 +32,7 @@ Database design
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
-|image|text||
+|image|string||
 |user_id|references|foreign_key: true|
 |group_id|references|foreign_key: true|
 
@@ -49,4 +49,4 @@ Database design
 ### Association
 - belongs_to :group
 - belongs_to :user
-- has_many :users
+-
