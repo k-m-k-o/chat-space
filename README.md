@@ -1,6 +1,5 @@
 # ChatSpace
 
-
 Database design
 ---------------
 
@@ -15,7 +14,6 @@ Database design
 ### Association
 - has_many :messages
 - has_many :groups,through: :members
-
 
 ## groupsテーブル
 
@@ -49,5 +47,3 @@ Database design
 ### Association
 - belongs_to :group
 - belongs_to :user
-
-
