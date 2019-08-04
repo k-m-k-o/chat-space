@@ -49,4 +49,3 @@ Database design
 ### Association
 - belongs_to :group
 - belongs_to :user
--
