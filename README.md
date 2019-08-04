@@ -14,22 +14,24 @@ Database design
 ### Association
 - has_many :messages
 - has_many :groups,through: :members
+- belongs_to :member
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|title|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :messages
 - has_many :users,through: :members
+- has many :members
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |image|text||
 |user_id|references|foreign_key: true|
 |group_id|references|foreign_key: true|
@@ -47,3 +49,4 @@ Database design
 ### Association
 - belongs_to :group
 - belongs_to :user
+- has_many :users
