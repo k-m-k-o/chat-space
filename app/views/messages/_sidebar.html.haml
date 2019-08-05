@@ -1,0 +1,12 @@
+%div.container
+  %div.sidebar
+    %div.sidebar__user
+      %p.sidebar__user__name
+        ユーザー名
+      %ul.sidebar__user__menu
+        %li.sidebar__user__menu__create-group
+          = link_to "",class: "sidebar__user__menu__create-group--btn" do
+            = fa_icon 'edit',class: "sidebar__user__menu__create-group--btn"
+        %li.sidebar__user__menu__edit-user
+          = link_to "",class: "sidebar__user__menu__edit-user--btn" do
+            = fa_icon 'gear',class: "sidebar__user__menu__create-group--btn"
