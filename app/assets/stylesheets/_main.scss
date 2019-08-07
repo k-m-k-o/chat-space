@@ -1,16 +1,13 @@
 @import "./variable";
-/* チャット画面部分の設定 */
 .main{
   width: calc(100vw - 300px);
   height: 100vh;
-  /* ここからヘッダー部分 */
   &__header{
     @include padside(40px);
     display: flex;
     justify-content: space-between;
     border-bottom: solid 0.5px #eeeeee;
     height: 100px;
-    /* ヘッダー内左側の要素 */
     &__left{
       padding-top: 35px;
       &__title{
@@ -21,10 +18,8 @@
         @include fontprop(12px,$subfcolor);
       }
     }
-    /* ヘッダー右側の要素 */
     &__right{
       margin-top:28px;
-      /* Editボタンの設定 */
       &--btn{
         display: inline-block;
         text-decoration: none;
@@ -35,19 +30,15 @@
       }
     }
   }
-  /* ここからチャット内容部分 */
   &__chat{
-    /* チャット部分全体の設定 */
     margin-top: 6px;
     @include padside(40px);
     height: calc(100vh - 206px);
     overflow: scroll;
-      /* 投稿毎の設定 */
       &__posts{
         display: flex;
         padding-top: 40px;
         &__left{
-          /* ユーザー名、投稿内容の設定 */
           &__username{
             @include fontprop(16px, $mainfcolor);
             font-weight: bold;
@@ -57,32 +48,27 @@
             @include fontprop(12px, $mainfcolor);
           }
         }  
-        /* 投稿時間の設定 */
         &__right{
           margin-left: 10px;
           @include fontprop(12px, $subfcolor);
         }
       }  
     }
-  /* ここからフッター部分 */
   &__footer{
     @include padside(40px);
     background-color: #ddd;
     height: 100px;
     &__output{
       padding-top: 25px;
-      /* 入力フォーム部分 */
       &__form{
         justify-content: space-between;
         display: flex;
         height: 50px;
-        /* 文字入力、ファイル選択部分の設定 */
         &__textarea{
           width: 100%;
           display: flex;
           margin-right: 15px;
           position: relative;
-          /* 文字入力部分の設定 */
           &__text{
             line-height: 50px;
             padding-left: 10px;
@@ -91,7 +77,6 @@
             z-index: 0;
             @include fontprop(16px, $subfcolor);
           }
-          /* 画像選択部分の設定 */
           &__picture{
             z-index: 1;
             font-size: 1.3rem;
@@ -101,7 +86,6 @@
             cursor: pointer;
           }
         }
-        /* 送信ボタン部分 */
         &__submit{
           height: 50px;
           width: 100px;

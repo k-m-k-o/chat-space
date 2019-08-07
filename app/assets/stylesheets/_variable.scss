@@ -11,24 +11,20 @@ $groupfcolor: #333333;
 $mainfcolor: #434a54;
 $subfcolor: #999999;
 
-/* よく使う変数 */
 @mixin sidefprop($size){
   font-weight: bold;
   font-size: $size;
 }
 
-/* 両端の同時padding指定 */
 @mixin padside($size){
   padding-left: $size;
   padding-right: $size;
 }
 
-/* リンクの下線除去用 */
 @mixin tdeco($style){
   text-decoration: $style;
 }
 
-/* フォントサイズと色の同時定義 */
 @mixin fontprop($size,$color){
   font-size: $size;
   color: $color;
