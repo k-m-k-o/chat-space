@@ -1,0 +1,29 @@
+%div.main
+  %div.main__header
+    %div.main__header__left
+      %p.gmain__header__left__title
+        グループ名
+      %p.main__header__left__member
+        Member：メンバー１
+    %div.main__header__right    
+      = link_to "",class: "main__header__right--btn" do
+        Edit
+  %div.main__chat
+    %div.main__chat__posts
+      %div.main__chat__posts__left
+        %p.main__chat__posts__left__username
+          ユーザー1
+        %p.main__chat__posts__left__text
+          投稿内容 
+      %div.main__chat__posts__right
+        %p.main__chat__posts__right__time
+          2019-08-05 21:00
+  %div.main__footer
+    %div.main__footer__output
+      %div.main__footer__output__form
+        %div.main__footer__output__form__textarea
+          %input.main__footer__output__form__textarea__text{placeholder: "type a message"}
+          %label{for: "file_icon",class: "main__footer__output__form__textarea__picture"}
+            = fa_icon 'image'
+            %input.main__footer__output__form__textarea__picture--btn{type: "file",style: "display:none",id: "file_icon"}
+        %input.main__footer__output__form__submit{type: "submit",value: "Send"}

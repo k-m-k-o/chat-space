@@ -1,4 +1,11 @@
 @import "./reset";
 @import "./variable";
-@import "./messages";
+@import "./main";
 @import "./font-awesome";
+@import "./flash";
+@import "./side";
+
+.container{
+  display: flex;
+  
+}

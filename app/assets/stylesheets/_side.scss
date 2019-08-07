@@ -1,0 +1,46 @@
+@import "./variable";
+/* サイドバー部分の設定 */
+.sidebar{
+  /* サイドバー内の文字要素の共通設定 */
+  & a,p{
+    color: $sidefcolor;
+    @include tdeco(none);
+  }
+  /* サイドバーユーザー部分の設定 */
+  &__user{
+    width:300px;
+    display: flex;
+    line-height: 100px;
+    background-color: $sideucolor;
+    justify-content: space-between;
+    @include padside(20px);
+    @include sidefprop(16px);
+    /* 編集ボタン、グループ作成ボタンの設定 */
+    &__menu{
+      display: flex;
+      &__list{
+        margin-right: 10px;
+      }
+    }
+  }
+  /* グループ一覧表示部分の設定 */
+  &__groups{
+    width:300px;
+    height: calc(100vh - 100px);
+    background-color: $sidegcolor;
+    @include padside(20px);
+    overflow: scroll;
+    /* グループ一つ分の表示設定 */
+    &__group{
+      &__title{
+        @include sidefprop(15px);
+        padding-top:20px;
+      }
+      &__post{
+        @include sidefprop(11px);
+        padding-top: 5px;
+        padding-bottom: 11px;
+      }
+    }
+  }  
+}
