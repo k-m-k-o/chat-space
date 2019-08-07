@@ -1,0 +1,31 @@
+/* フラッシュの背景色 */
+$flashcolor: #38aef0;
+
+/* サイドバーの背景、フォント色 */
+$sideucolor: #253141;
+$sidegcolor: #2f3e51;
+$sidefcolor: #ffffff;
+
+/* メイン部分のフォント色 */
+$groupfcolor: #333333;
+$mainfcolor: #434a54;
+$subfcolor: #999999;
+
+@mixin sidefprop($size){
+  font-weight: bold;
+  font-size: $size;
+}
+
+@mixin padside($size){
+  padding-left: $size;
+  padding-right: $size;
+}
+
+@mixin tdeco($style){
+  text-decoration: $style;
+}
+
+@mixin fontprop($size,$color){
+  font-size: $size;
+  color: $color;
+}

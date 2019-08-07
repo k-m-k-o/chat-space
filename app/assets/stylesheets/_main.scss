@@ -1,0 +1,100 @@
+@import "./variable";
+.main{
+  width: calc(100vw - 300px);
+  height: 100vh;
+  &__header{
+    @include padside(40px);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 0.5px #eeeeee;
+    height: 100px;
+    &__left{
+      padding-top: 35px;
+      &__title{
+        @include fontprop(20px,$groupfcolor);
+      }
+      &__member{
+        padding-top:15px;
+        @include fontprop(12px,$subfcolor);
+      }
+    }
+    &__right{
+      margin-top:28px;
+      &--btn{
+        display: inline-block;
+        text-decoration: none;
+        line-height: 40px;
+        border: solid 0.5px $flashcolor;
+        @include padside(20px);
+        color: $flashcolor;
+      }
+    }
+  }
+  &__chat{
+    margin-top: 6px;
+    @include padside(40px);
+    height: calc(100vh - 206px);
+    overflow: scroll;
+      &__posts{
+        display: flex;
+        padding-top: 40px;
+        &__left{
+          &__username{
+            @include fontprop(16px, $mainfcolor);
+            font-weight: bold;
+          }
+          &__text{
+            padding-top: 10px;
+            @include fontprop(12px, $mainfcolor);
+          }
+        }  
+        &__right{
+          margin-left: 10px;
+          @include fontprop(12px, $subfcolor);
+        }
+      }  
+    }
+  &__footer{
+    @include padside(40px);
+    background-color: #ddd;
+    height: 100px;
+    &__output{
+      padding-top: 25px;
+      &__form{
+        justify-content: space-between;
+        display: flex;
+        height: 50px;
+        &__textarea{
+          width: 100%;
+          display: flex;
+          margin-right: 15px;
+          position: relative;
+          &__text{
+            line-height: 50px;
+            padding-left: 10px;
+            padding-right: 30px;
+            width: 100%;
+            z-index: 0;
+            @include fontprop(16px, $subfcolor);
+          }
+          &__picture{
+            z-index: 1;
+            font-size: 1.3rem;
+            line-height: 50px;
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+          }
+        }
+        &__submit{
+          height: 50px;
+          width: 100px;
+          background-color: $flashcolor;
+          color: $sidefcolor;
+          @include padside(30px);  
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
