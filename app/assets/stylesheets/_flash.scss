@@ -1,10 +1,16 @@
 @import "./variable";
 /*フラッシュの設定*/
-.flash-info{
-  width:100%;
-  background-color: $flashcolor;
-  &__message{
+
+.notification {
+  .notice {
+    background-color: $flashcolor;
     color: $sidefcolor;
-    text-align:center;
+    text-align: center;
   }
-}
+  
+  .alert {
+    background-color: $alertcolor;
+    color: $sidefcolor;
+    text-align: center;
+    }
+  }
