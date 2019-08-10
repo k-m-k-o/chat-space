@@ -5,16 +5,17 @@
       = current_user.name
     %ul.sidebar__user__menu
       %li.sidebar__user__menu__list
-        = link_to "",class: "sidebar__user__menu__list__btn" do
+        = link_to new_group_path,class: "sidebar__user__menu__list__btn" do
           = fa_icon 'edit',class: "sidebar__user__menu__list__btn--icon"
       %li.sidebar__user__menu__list
         = link_to edit_user_path(current_user),class: "sidebar__user__menu__list__btn" do
           = fa_icon 'gear',class: "sidebar__user__menu__list__btn--icon"
   %div.sidebar__groups
     %div.sidebar__groups__group
-      %div.sidebar__groups__group__title
-        = link_to "",class: "sidebar__grouplist__group__title" do
-          グループ名
-      %div.sidebar__groups__group__post
-        = link_to "",class: "sidebar__grouplist__group__post" do
-          最新の投稿
+      - current_user.groups.each do |group|
+        %div.sidebar__groups__group__title
+          = link_to "",class: "sidebar__grouplist__group__title" do
+            = group.name
+        %div.sidebar__groups__group__post
+          = link_to "",class: "sidebar__grouplist__group__post" do
+            メッセージはまだありません
