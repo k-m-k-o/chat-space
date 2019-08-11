@@ -14,8 +14,8 @@
     %div.sidebar__groups__group
       - current_user.groups.each do |group|
         %div.sidebar__groups__group__title
-          = link_to "",class: "sidebar__grouplist__group__title" do
+          = link_to group_messages_path(group), class: "sidebar__grouplist__group__title" do
             = group.name
         %div.sidebar__groups__group__post
-          = link_to "",class: "sidebar__grouplist__group__post" do
-            メッセージはまだありません
+          = link_to group_messages_path(group), class: "sidebar__grouplist__group__post" do
+            = group.show_last_messages

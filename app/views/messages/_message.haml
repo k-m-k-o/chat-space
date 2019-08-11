@@ -1,0 +1,14 @@
+%div.main__chat__posts
+  %div.main__chat__posts__left
+    %p.main__chat__posts__left__username
+      = message.user.name
+    %p.main__chat__posts__left__time
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  %div.main__chat__posts__bottom
+    %p.main__chat__posts__bottom__text
+      = message.body
+    - if message.image.present?
+      %p.main__chat__posts__bottom__image
+        = image_tag message.image.url
+
+  

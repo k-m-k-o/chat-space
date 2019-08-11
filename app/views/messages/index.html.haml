@@ -1,3 +1,8 @@
 %div.container
   =render partial: 'sidebar'
-  =render partial: 'main_contents'
+  %div.main
+    =render partial: 'main_header', locals: {group: @group}
+    %div.main__chat
+      =render partial: 'message', collection: @messages
+      %div.main__chat__after 
+    =render partial: 'main_footer',  locals: {group: @group, message: @message}

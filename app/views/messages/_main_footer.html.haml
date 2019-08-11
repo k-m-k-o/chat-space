@@ -1,0 +1,10 @@
+%div.main__footer
+  %div.main__footer__output
+    = form_for [group, message] do |f|
+      %div.main__footer__output__form
+        %div.main__footer__output__form__textarea
+          = f.text_field :body, class: "main__footer__output__form__textarea__text", placeholder: "type a message"
+          = f.label :image, class: "main__footer__output__form__textarea__picture",for: "file_icon" do
+            = fa_icon 'image'
+            = f.file_field :image, class: "main__footer__output__form__textarea__picture--btn", style: "display:none", id: "file_icon"
+        = f.submit "Send", class: "main__footer__output__form__submit"

@@ -36,22 +36,27 @@
     height: calc(100vh - 206px);
     overflow: scroll;
       &__posts{
-        display: flex;
         padding-top: 40px;
         &__left{
+          display: flex;
           &__username{
             @include fontprop(16px, $mainfcolor);
             font-weight: bold;
           }
-          &__text{
-            padding-top: 10px;
-            @include fontprop(12px, $mainfcolor);
+          &__time{
+            margin-left: 10px;
+            @include fontprop(12px, $subfcolor)
           }
-        }  
-        &__right{
-          margin-left: 10px;
-          @include fontprop(12px, $subfcolor);
+        } 
+        &__bottom{
+          padding-top: 10px;
+          &__text{
+            @include fontprop(12px, $mainfcolor);
+          } 
         }
+      }
+      &__after{
+        height: 100px;
       }  
     }
   &__footer{
@@ -75,7 +80,7 @@
             padding-right: 30px;
             width: 100%;
             z-index: 0;
-            @include fontprop(16px, $subfcolor);
+            font-size: 16px;
           }
           &__picture{
             z-index: 1;
