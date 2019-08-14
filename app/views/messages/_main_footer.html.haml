@@ -1,6 +1,6 @@
 %div.main__footer
   %div.main__footer__output
-    = form_for [group, message] do |f|
+    = form_for [group, message], class: "form_message"  do |f|
       %div.main__footer__output__form
         %div.main__footer__output__form__textarea
           = f.text_field :body, class: "main__footer__output__form__textarea__text", placeholder: "type a message"

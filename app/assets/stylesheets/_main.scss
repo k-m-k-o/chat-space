@@ -75,6 +75,7 @@
           margin-right: 15px;
           position: relative;
           &__text{
+            box-sizing: border-box;
             line-height: 50px;
             padding-left: 10px;
             padding-right: 30px;
@@ -102,4 +103,7 @@
       }
     }
   }
+}
+.field_with_errors{
+  width: 100%;
 }
