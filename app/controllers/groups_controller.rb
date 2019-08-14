@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
   def index
   end
 
+
   def create
     @group = Group.new(group_params)
     if @group.save
@@ -33,5 +34,6 @@ class GroupsController < ApplicationController
 
   def set_group
     @group = Group.find(params[:id]) 
+    @users = @group.users
   end   
 end
