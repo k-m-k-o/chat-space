@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var input_imgtag = (message.image) ? `<img src=${message.image}></img>`: "";
+    var input_imgtag = (message.image) ? `<img src=${ message.image }></img>`: "";
     var html = `<div class ="main__chat__posts">
                   <div class="main__chat__posts__left">
                     <p class="main__chat__posts__left__username">
@@ -17,14 +17,14 @@ $(function(){
                     ${ input_imgtag }
                   </div>
                 </div>`
-        return html;          
+    return html;          
   }
   $(".new_message").on("submit",function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr("action");
     $.ajax({
-      url:  url,
+      url: url,
       type: "POST",
       data: formData,
       dataType: "json",
