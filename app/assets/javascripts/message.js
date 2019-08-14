@@ -36,6 +36,7 @@ $(function(){
       $(".main__chat__after").before(html);
       $(".main__chat").animate({scrollTop: $('.main__chat')[0].scrollHeight});
       $(".main__footer__output__form__textarea__text").val("");
+      $(".main__footer__output__form__textarea__picture--btn").val("");
       $(".main__footer__output__form__submit").prop("disabled", false);
     })
     .fail(function(){
