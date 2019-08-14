@@ -4,17 +4,17 @@ $(function(){
     var html = `<div class ="main__chat__posts">
                   <div class="main__chat__posts__left">
                     <p class="main__chat__posts__left__username">
-                        ${ message.name }
-                      </p>
+                      ${ message.name }
+                    </p>
                     <p class="main__chat__posts__left__time">
-                        ${ message.time }
+                      ${ message.time }
                     </p>
                   </div>
                   <div class="main__chat__posts__bottom">
-                      <p class="main__chat__posts__bottom__text">
-                        ${ message.body }
-                      </p>
-                      ${ input_imgtag }
+                    <p class="main__chat__posts__bottom__text">
+                      ${ message.body }
+                    </p>
+                    ${ input_imgtag }
                   </div>
                 </div>`
         return html;          
