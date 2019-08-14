@@ -4,10 +4,10 @@ $(function(){
     var html = `<div class ="main__chat__posts">
                   <div class="main__chat__posts__left">
                     <p class="main__chat__posts__left__username">
-                        ${ message.user_name }
+                        ${ message.name }
                       </p>
                     <p class="main__chat__posts__left__time">
-                        ${ message.created_at }
+                        ${ message.time }
                     </p>
                   </div>
                   <div class="main__chat__posts__bottom">
@@ -19,7 +19,7 @@ $(function(){
                 </div>`
         return html;          
   }
-  $("#new_message").on("submit",function(e){
+  $(".new_message").on("submit",function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr("action");
@@ -27,20 +27,19 @@ $(function(){
       url:  url,
       type: "POST",
       data: formData,
-      dataType: 'json',
+      dataType: "json",
       contentType: false,
       processData: false
     })
-    .done(function(formData){
-      var html = buildHTML(formData);
+    .done(function(data){
+      var html = buildHTML(data);
       $(".main__chat__after").before(html);
       $(".main__chat").animate({scrollTop: $('.main__chat')[0].scrollHeight});
-      //空欄処理
       $(".main__footer__output__form__textarea__text").val("");
-      $(".main__footer__output__form__submit").prop('disabled', false);
+      $(".main__footer__output__form__submit").prop("disabled", false);
     })
     .fail(function(){
-      alert('投稿に失敗しました');
+      alert("投稿に失敗しました");
     });
   });
 });
