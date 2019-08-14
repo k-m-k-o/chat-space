@@ -23,13 +23,17 @@
     .chat-group-form__field--left
       %label.chat-group-form__label{for: "chat_group_チャットメンバーを追加"} チャットメンバーを追加
     .chat-group-form__field--right.chat__members
-      - if into_users != nil
-        - into_users.each do |user|
-          .chat-group-user
-            = f.hidden_field :user_ids,value: user.id
-            %p.chat-group-user__name  
-              = user.name
-            - unless user == current_user
+      .chat-group-user
+        %input{type: "hidden", name: "group[user_ids][]", value: "#{current_user.id}"}
+        %p.chat-group-user__name  
+          = current_user.name
+      - if already_users != nil
+        - already_users.each do |user|
+          - unless user == current_user
+            .chat-group-user
+              %input{type: "hidden", name: "group[user_ids][]", value: "#{user.id}"}
+              %p.chat-group-user__name  
+                = user.name
               .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
   .chat-group-form__field
     .chat-group-form__field--left

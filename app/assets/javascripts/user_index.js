@@ -5,12 +5,12 @@ $(function(){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.name}</p>
                   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${user.id} data-user-name=${user.name}>追加</div>
-                  </div>`;
+                </div>`;
     searchHtml.append(html);
   };
-  function memberaddHTML(id,name){
+  function memberAddHTML(id,name){
     var html = `<div class='chat-group-user'>
-                  <input name='user_ids' type='hidden' value=${id}>
+                  <input name="group[user_ids][]" value=${id} type="hidden" ></input>
                   <p class='chat-group-user__name'>${name}</p>
                   <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
                 </div>`
@@ -42,10 +42,9 @@ $(function(){
       };
       $(".user-search-add").on("click", function(){
         $(this).parent().remove();
-        console.log(this);
         var user_id = $(this).data("user-id");
         var user_name = $(this).data("user-name");
-        memberaddHTML(user_id,user_name);
+        memberAddHTML(user_id,user_name);
         $(".js-remove-btn").on("click", function(){
           $(this).parent().remove();
         });

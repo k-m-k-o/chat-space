@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_group ,only: :edit
+
   def index
     @users = User.where('name LIKE(?)', "#{params[:keyword]}%")
     respond_to do |format|
@@ -7,10 +7,6 @@ class UsersController < ApplicationController
       format.json
     end
   end  
-
-  def edit
-    @users = @group.users
-  end
 
   def  update
     if current_user.update(user_params)
@@ -21,11 +17,9 @@ class UsersController < ApplicationController
   end  
 
   private
+  
   def user_params
     params.require(:user).permit(:name,:email)
   end  
 
-  def set_group
-    @group = Group.find(params[:group_id])
-  end  
 end
