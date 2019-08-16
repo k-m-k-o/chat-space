@@ -8,6 +8,7 @@ $(function(){
                 </div>`;
     searchHtml.append(html);
   };
+
   function memberAddHTML(id,name){
     var html = `<div class='chat-group-user'>
                   <input name="group[user_ids][]" value=${id} type="hidden" ></input>
@@ -16,12 +17,14 @@ $(function(){
                 </div>`
     findMemberHtml.append(html)
   };
+  
   function adderrHTML(message){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${message}</p>
                 </div>`
     return html;           
   };
+
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
     $.ajax({
@@ -51,6 +54,7 @@ $(function(){
       alert("ユーザー検索に失敗しました")
     });
   });
+
   $(document).on("click", ".js-remove-btn", function(){
     $(this).parent().remove();
   });
