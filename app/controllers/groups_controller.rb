@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
   def index
   end
 
+
   def create
     @group = Group.new(group_params)
     if @group.save
@@ -28,10 +29,11 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name,{ :user_ids => [] })
+    params.require(:group).permit(:name,{ user_ids: [] })
   end  
 
   def set_group
     @group = Group.find(params[:id]) 
+    @users = @group.users
   end   
 end
