@@ -45,16 +45,13 @@ $(function(){
         var user_id = $(this).data("user-id");
         var user_name = $(this).data("user-name");
         memberAddHTML(user_id,user_name);
-        $(".js-remove-btn").on("click", function(){
-          $(this).parent().remove();
-        });
       });
     })
     .fail(function(){
       alert("ユーザー検索に失敗しました")
     });
   });
-  $(".js-remove-btn").on("click", function(){
+  $(document).on("click", ".js-remove-btn", function(){
     $(this).parent().remove();
   });
 });
