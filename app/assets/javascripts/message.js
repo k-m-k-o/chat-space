@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     var input_imgtag = (message.image) ? `<img src=${ message.image }></img>`: "";
-    var html = `<div class ="main__chat__posts">
+    var html = `<div class ="main__chat__posts" data-id=${message.id} data-group_id=${message.group_id}>
                   <div class="main__chat__posts__left">
                     <p class="main__chat__posts__left__username">
                       ${ message.name }
@@ -18,6 +18,12 @@ $(function(){
                   </div>
                 </div>`
     return html;          
+  }
+  function makeFlash(message){
+    var html = `<div class='notification'>
+                  <div class="notice">${message}</div>
+                </div>`
+    return html;
   }
   $(".new_message").on("submit",function(e){
     e.preventDefault();
@@ -43,4 +49,31 @@ $(function(){
       alert("投稿に失敗しました");
     });
   });
+  var reloadMessages = function(){
+    var last_message_id = $(".main__chat__posts:last").data("id");
+    $.ajax({
+      url: "api/messages",
+      type: "get",
+      dataType: "json",
+      data: {id: last_message_id}
+    })
+    .done(function(messages){
+      if (messages.length !== 0){ 
+        var insertHTML = '';
+        messages.forEach(function(message){
+          var html = buildHTML(message);
+          insertHTML = insertHTML + html;
+          $(".main__chat__after").before(insertHTML);
+        });
+        $(".main__chat").animate({scrollTop: $('.main__chat')[0].scrollHeight});
+      };
+    })
+    .fail(function(){
+      var html = makeFlash("自動更新に失敗しました")
+      $(".container").before(html);
+    });
+  };
+  if ($(".main__chat").size() !== 0){
+    setInterval(reloadMessages, 5000);
+  };
 });
