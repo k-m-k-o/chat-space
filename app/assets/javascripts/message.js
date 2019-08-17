@@ -70,7 +70,9 @@ $(function(){
     })
     .fail(function(){
       var html = makeFlash("自動更新に失敗しました")
-      $(".container").before(html);
+      if ($(".notification").size() === 0){
+        $(".container").before(html);
+      };
     });
   };
   if ($(".main__chat").size() !== 0){
