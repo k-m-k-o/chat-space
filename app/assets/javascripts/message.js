@@ -25,8 +25,16 @@ $(function(){
                 </div>`
     return html;
   }
+  function afterPosting(){
+    $(".main__footer__output__form__textarea__text").val("");
+      $(".main__footer__output__form__textarea__picture--btn").val("");
+      $(".main__footer__output__form__submit").prop("disabled", false);
+      $(".main__footer__output__form__submit").attr('data-disable-with');
+  }
   $(".new_message").on("submit",function(e){
     e.preventDefault();
+    $(".main__footer__output__form__submit").removeAttr('data-disable-with');
+    $(".main__footer__output__form__submit").prop("disabled", true);
     var formData = new FormData(this);
     var url = $(this).attr("action");
     $.ajax({
@@ -41,12 +49,11 @@ $(function(){
       var html = buildHTML(data);
       $(".main__chat__after").before(html);
       $(".main__chat").animate({scrollTop: $('.main__chat')[0].scrollHeight});
-      $(".main__footer__output__form__textarea__text").val("");
-      $(".main__footer__output__form__textarea__picture--btn").val("");
-      $(".main__footer__output__form__submit").prop("disabled", false);
+      afterPosting();
     })
     .fail(function(){
       alert("投稿に失敗しました");
+      afterPosting();
     });
   });
   var reloadMessages = function(){

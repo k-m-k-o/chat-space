@@ -7,4 +7,4 @@
           = f.label :image, class: "main__footer__output__form__textarea__picture" do
             = fa_icon 'image'
             = f.file_field :image, class: "main__footer__output__form__textarea__picture--btn", style: "display:none"
-        = f.submit "Send", class: "main__footer__output__form__submit"
+        = f.submit "Send", class: "main__footer__output__form__submit", "data-disable-with": "送信中..."

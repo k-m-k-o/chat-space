@@ -25,7 +25,10 @@ $(function(){
     return html;           
   };
 
-  $("#user-search-field").on("keyup", function(){
+  $("#user-search-field").on("keyup", function(e){
+    if (e.keyCode === 8 || e.keyCode === 46){
+      return false;
+    };
     var input = $("#user-search-field").val();
     $.ajax({
       url: "/users",
