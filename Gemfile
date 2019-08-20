@@ -42,6 +42,14 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
+<<<<<<< HEAD
+=======
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+>>>>>>> b49eb2224eea9c4fc5d2aa4f2d4477ac4010ec13
 
 end
 
@@ -59,7 +67,6 @@ end
 
 group :production do
   gem 'unicorn', '5.4.1'
-  gem 'capistrano'
 end  
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
