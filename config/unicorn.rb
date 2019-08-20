@@ -3,15 +3,14 @@ app_path = File.expand_path('../../../', __FILE__)
 
 worker_processes 1
 
-working_directory "#{app_path}/current"
 
-pid "#{app_path}/shared/tmp/pids/unicorn.pid"
+pid "/var/www/chat-space/shared/tmp/pids/unicorn.pid"
 
-listen  "#{app_path}/shared/tmp/sockets/unicorn.sock"
+listen  "/var/www/chat-space/shared/tmp/sockets/unicorn.sock"
 
-stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
+stderr_path "/var/www/chat-space/shared/log/unicorn.stderr.log"
 
-stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
+stdout_path "/var/www/chat-space/shared/log/unicorn.stdout.log"
 
 timeout 60
 
