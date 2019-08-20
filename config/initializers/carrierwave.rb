@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'chihachiha'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chihachiha'
+  config.asset_host = 'https://chihachiha.s3.amazonaws.com'
 end
