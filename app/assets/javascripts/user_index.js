@@ -26,10 +26,10 @@ $(function(){
   };
 
   $("#user-search-field").on("keyup", function(e){
-    if (e.keyCode === 8 || e.keyCode === 46){
-      return false;
-    };
     var input = $("#user-search-field").val();
+    if(input.length === 0){
+      return false;
+    }else{
     $.ajax({
       url: "/users",
       type: "GET",
@@ -56,6 +56,7 @@ $(function(){
     .fail(function(){
       alert("ユーザー検索に失敗しました")
     });
+  };
   });
 
   $(document).on("click", ".js-remove-btn", function(){
